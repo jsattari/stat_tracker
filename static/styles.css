@@ -2,15 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     background-color: dodgerBlue;
-    width: 90%;
+    width: 100%;
     justify-content: center;
 }
   
 .block {
-    background-color: #f1f1f1;
+    background-color: honeydew;
     width: 20%;
     height: 250px;
-    margin: 1px;
+    margin: 0px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
@@ -21,4 +21,3 @@
     text-align: center;
     font-size: 40px;
 }
-  
