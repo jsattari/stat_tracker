@@ -1,23 +1,36 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: dodgerBlue;
+    background-color: transparent;
     width: 100%;
-    justify-content: center;
 }
   
 .block {
-    background-color: honeydew;
-    width: 20%;
+    background-color: lightgrey;
+    width: 30%;
     height: 250px;
-    margin: 0px;
     text-align: center;
     line-height: 75px;
     font-size: 30px;
+    border: aliceblue;
+    border-style: solid;
+    margin: auto;
 }
   
 .scoreboard {
-    background-color: dodgerBlue;
+    background-color: transparent;
     text-align: center;
     font-size: 40px;
+    font-family: monospace;
+    color: crimson;
+}
+
+.homeDiv {
+    background-color: red;
+    color: white;
+}
+
+.visDiv {
+    background-color: blue;
+    color: white;
 }
