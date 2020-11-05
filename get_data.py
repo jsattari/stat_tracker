@@ -41,7 +41,7 @@ def main():
 
     # gsheet, auth path
     workbook = 'https://docs.google.com/spreadsheets/d/1DedqHvnHGBDcyFpJb-fUmF--0atusWqvJbY8LbWa9sU/edit?usp=sharing'
-    auth_file = '~/gsheets_key.json'
+    auth_file = os.getcwd() + '/gsheets_key.json'
 
     # api link
     stats_api = f'https://www.balldontlie.io/api/v1/stats?start_date={start_date}&end_date={end_date}'
