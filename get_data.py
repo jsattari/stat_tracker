@@ -31,10 +31,13 @@ def main():
     today = dt.datetime.today()
 
     # get start_date and end_date
-    end_date = today.strftime('%Y-%m-%d')
+    """ end_date = today.strftime('%Y-%m-%d')
     delta = dt.timedelta(days=3)
     yesterday = today - delta
-    start_date = yesterday.strftime('%Y-%m-%d')
+    start_date = yesterday.strftime('%Y-%m-%d') """
+
+    end_date = '2020-09-09'
+    start_date = '2020-09-09'
 
     # gsheet, auth path
     workbook = 'https://docs.google.com/spreadsheets/d/1DedqHvnHGBDcyFpJb-fUmF--0atusWqvJbY8LbWa9sU/edit?usp=sharing'
