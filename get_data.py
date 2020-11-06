@@ -68,8 +68,8 @@ def main():
         bball_data = bball_data.append(norm_json)
 
     # add adv data columns
-    bball_data['ts%'] = bball_data['pts'].values / \
-        (2 * (bball_data['fga'].values + .44 * bball_data['fta'].values))
+    bball_data['ts%'] = bball_data['pts'] / \
+        (2 * (bball_data['fga'] + .44 * bball_data['fta']))
 
     # remove NaNs
     bball_data['ts%'] = bball_data['ts%'].astype(
