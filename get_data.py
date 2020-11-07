@@ -83,7 +83,7 @@ def main():
                             'player.last_name'], axis=1, inplace=True)
 
     # load data to gsheet using function
-    bball_data.to_csv('~/data/boxscore_data.csv', index=False)
+    bball_data.to_csv(os.path.abspath() + '/stat_tracker/data', index=False)
 
     # get season avgs
     player_id_list = bball_data['player.id'].to_list()
@@ -109,7 +109,7 @@ def main():
         str).apply(lambda x: names.get(x))
 
     # load to gsheets
-    df_avgs.to_csv('~/data/szn_averages.csv', index=False)
+    df_avgs.to_csv(os.path.abspath() + '/data/szn_averages.csv', index=False)
 
 
 if __name__ == "__main__":
