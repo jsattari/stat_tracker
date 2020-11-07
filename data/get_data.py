@@ -84,7 +84,7 @@ def main():
 
     # load data to gsheet using function
     bball_data.to_csv(os.getcwd() +
-                      '/stat_tracker/data', index=False)
+                      '/data/gameday_data.csv', index=False)
 
     # get season avgs
     player_id_list = bball_data['player.id'].to_list()
@@ -94,7 +94,7 @@ def main():
 
     # add player ID strings to api call
     for i in player_id_list:
-        avgs_api = avgs_api + '&player_ids[]=' + i
+        avgs_api = avgs_api + f'&player_ids[]={i}'
 
     # pull data from avgs api
     szn_avgs = pull_me_off(avgs_api)
