@@ -42,6 +42,7 @@ def main():
     # gsheet, auth path
     workbook = 'https://docs.google.com/spreadsheets/d/1DedqHvnHGBDcyFpJb-fUmF--0atusWqvJbY8LbWa9sU/edit?usp=sharing'
     auth_file = '/home/jsattari/gsheets_key.json'
+    # auth_file = '/Users/johnsattari/stat_tracker/gsheets_key.json'
 
     # api link
     stats_api = f'https://www.balldontlie.io/api/v1/stats?start_date={start_date}&end_date={end_date}'
@@ -82,7 +83,7 @@ def main():
                             'player.last_name'], axis=1, inplace=True)
 
     # load data to gsheet using function
-    gloader('box_scores_current', bball_data, auth_file, workbook)
+    bball_data.to_csv('~/data/boxscore_data.csv', index=False)
 
     # get season avgs
     player_id_list = bball_data['player.id'].to_list()
@@ -108,7 +109,7 @@ def main():
         str).apply(lambda x: names.get(x))
 
     # load to gsheets
-    gloader('season_avg', df_avgs, auth_file, workbook)
+    df_avgs.to_csv('~/data/szn_averages.csv', index=False)
 
 
 if __name__ == "__main__":
