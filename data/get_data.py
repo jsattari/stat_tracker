@@ -40,7 +40,7 @@ def main():
     start_date = '2020-09-09'
 
     # gsheet, auth path
-    workbook = 'https://docs.google.com/spreadsheets/d/1DedqHvnHGBDcyFpJb-fUmF--0atusWqvJbY8LbWa9sU/edit?usp=sharing'
+    # workbook = 'https://docs.google.com/spreadsheets/d/1DedqHvnHGBDcyFpJb-fUmF--0atusWqvJbY8LbWa9sU/edit?usp=sharing'
     # auth_file = '/home/jsattari/gsheets_key.json'
     # auth_file = '/Users/johnsattari/stat_tracker/gsheets_key.json'
 
@@ -83,7 +83,8 @@ def main():
                             'player.last_name'], axis=1, inplace=True)
 
     # load data to gsheet using function
-    bball_data.to_csv(os.path.abspath(os.getcwd()) + '/stat_tracker/data', index=False)
+    bball_data.to_csv(os.path.abspath(os.getcwd()) +
+                      '/stat_tracker/data', index=False)
 
     # get season avgs
     player_id_list = bball_data['player.id'].to_list()
@@ -109,7 +110,8 @@ def main():
         str).apply(lambda x: names.get(x))
 
     # load to gsheets
-    df_avgs.to_csv(os.path.abspath(os.getcwd()) + '/data/szn_averages.csv', index=False)
+    df_avgs.to_csv(os.path.abspath(os.getcwd()) +
+                   '/data/szn_averages.csv', index=False)
 
 
 if __name__ == "__main__":
