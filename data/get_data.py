@@ -113,6 +113,33 @@ def main():
     df_avgs.to_csv(os.getcwd() +
                    '/data/szn_averages.csv', index=False)
 
+    # api link for games
+    games_api = 'https://www.balldontlie.io/api/v1/games?start_date=2020-08-09&end_date=2020-09-09'
+
+    # execute api call
+    games = pull_me_off(games_api)
+
+    # new df to house games data
+    df_games = pd.DataFrame(
+        columns=['home', 'away', 'home_score', 'away_score', 'qtr', 'time', 'status'])
+
+    # loop through games api call to assign data to df_games
+    for x in range(0, len(games)):
+        test_dict = games[x]
+        y = {}
+        y['home'] = test_dict.get('home_team').get('name')
+        y['away'] = test_dict.get('visitor_team').get('name')
+        y['home_score'] = test_dict.get('home_team_score')
+        y['away_score'] = test_dict.get('visitor_team_score')
+        y['qtr'] = test_dict.get('period')
+        y['time'] = test_dict.get('time') if test_dict.get(
+            'time') is not '' else 'End'
+        y['status'] = test_dict.get('status')
+        df_test = pd.DataFrame([y])
+        df_games = df_games.append(df_test)
+
+    df_games.to_csv(os.getcwd() +
+                    '/data/games.csv', index=False)
 
 if __name__ == "__main__":
     main()
