@@ -5,7 +5,14 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
-data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=2020-09-01&end_date=2020-09-09');
+var date = new Date();
+var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+date.setDate(date.getDate() - 90);
+var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
+
+// https://www.balldontlie.io/api/v1/games?start_date=2020-09-09&end_date=2020-09-09
 
 var flex = document.createElement('div');
 
@@ -26,17 +33,25 @@ for (i = 0; i < data.data.length; i++) {
 
     var visDiv = document.createElement('div');
 
+    var period = document.createElement('div');
+
     homeDiv.className = 'homeDiv';
 
     visDiv.className = 'visDiv';
 
+    period.className = 'period';
+
     homeDiv.innerHTML = cow.home_team.abbreviation + ': ' + cow.home_team_score;
 
-    visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;;
+    visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
+
+    period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status
 
     smallDiv.appendChild(homeDiv);
 
     smallDiv.appendChild(visDiv);
+
+    smallDiv.appendChild(period);
 
     flex.appendChild(smallDiv);
 

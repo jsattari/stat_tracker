@@ -1,18 +1,18 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: transparent;
+    background-color: black;
     width: 100%;
 }
   
 .block {
     background-color: lightgrey;
-    width: 40%;
+    width: 25%;
     height: 250px;
     text-align: center;
     line-height: 75px;
     font-size: 25px;
-    border: aliceblue;
+    border: black;
     border-style: solid;
     margin: auto;
 }
@@ -26,11 +26,22 @@
 }
 
 .homeDiv {
-    background-color: red;
-    color: white;
+    background-color: transparent;
+    color: red;
 }
 
 .visDiv {
-    background-color: blue;
-    color: white;
+    background-color: transparent;
+    color: blue;
+}
+
+.period {
+    background-color: pink;
+    color: black;
+    font-size: 12px;
+    font-family: monospace;
+}
+
+body {
+    background-color: black
 }
