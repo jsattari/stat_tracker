@@ -1,22 +1,24 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    flex-direction: row;
+    background-color: transparent;
     width: 100%;
+    justify-content: space-between;
 }
-  
+
 .block {
     background-color: lightgrey;
-    width: 25%;
+    width: 20%;
     height: 250px;
     text-align: center;
     line-height: 75px;
-    font-size: 25px;
+    font-size: 35px;
     border: black;
     border-style: solid;
-    margin: auto;
+    margin: 10px 10px 0 10px;
 }
-  
+
 .scoreboard {
     background-color: transparent;
     text-align: center;
@@ -28,20 +30,24 @@
 .homeDiv {
     background-color: transparent;
     color: red;
+    height: 20%;
 }
 
 .visDiv {
     background-color: transparent;
     color: blue;
+    height: 20%;
 }
 
 .period {
     background-color: pink;
     color: black;
-    font-size: 12px;
+    font-size: 18px;
     font-family: monospace;
+    width: 100%;
+    height: 20%;
 }
 
 body {
-    background-color: black
+    background-color: black;
 }
