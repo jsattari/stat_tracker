@@ -1,3 +1,5 @@
+import { default as anime } from '../node_modules/animejs/lib/anime.js'
+
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
