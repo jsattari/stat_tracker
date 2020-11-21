@@ -57,7 +57,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     smallDiv.appendChild(period);
 
-    period.appendChild(btn);
+    smallDiv.appendChild(btn);
 
     flex.appendChild(smallDiv);
 
