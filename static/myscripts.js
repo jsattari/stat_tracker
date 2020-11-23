@@ -5,36 +5,6 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
-function getModal(gameId) {
-
-    data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + gameId)
-    // Get the modal
-    var modal = document.getElementById("myModal");
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-}
-
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 date.setDate(date.getDate() - 90);
@@ -53,7 +23,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     smallDiv.className = 'block';
 
-    // smallDiv.innerHTML = i;
+    smallDiv.setAttribute('id', cow.id);
 
     var homeDiv = document.createElement('div');
 
@@ -87,7 +57,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
 
-    period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ' + cow.id;
+    period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
 
     spanner.innerHTML = "&times;";
 
@@ -109,6 +79,6 @@ for (let i = 0; i < data.data.length; i++) {
 
     flex.appendChild(smallDiv);
 
-}
+    document.body.appendChild(flex);
 
-document.body.appendChild(flex);
+}
