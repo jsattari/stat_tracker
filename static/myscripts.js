@@ -1,3 +1,4 @@
+// function to make api call
 function httpGet(theUrl) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
@@ -5,15 +6,19 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
+// dates for api pulls
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 date.setDate(date.getDate() - 90);
 var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
-data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
+// variable to hold data
+var data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
 
+// create flexbox
 var flex = document.createElement('div');
 
+// set class name of flexbox
 flex.className = 'flex-container';
 
 for (let i = 0; i < data.data.length; i++) {
@@ -32,6 +37,8 @@ for (let i = 0; i < data.data.length; i++) {
     var period = document.createElement('div');
 
     var myModal = document.createElement('div');
+
+    myModal.setAttribute('id', 'myModal');
 
     var modContent = document.createElement('div');
 
