@@ -1,6 +1,6 @@
-document
-    .querySelector('button')
-    .addEventListener('click',
-        function(e) {
-            console.log(e.target.id)
-        })
+document.querySelectorAll('button').forEach(item => {
+    item.addEventListener('click', event => {
+        var parent = item.parentNode;
+        console.log(parent.id)
+    })
+})
