@@ -9,14 +9,12 @@ function httpGet(theUrl) {
 document.querySelectorAll('button').forEach(item => {
     item.addEventListener('click', event => {
         var modal = document.getElementById('myModal');
-        var span = document.getElementsByClassName("close")[0];
+        var span = document.getElementsByClassName("close");
         var parent = item.parentNode;
         data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + parent.id)
         modal.style.display = "block";
         modal.innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
-        span.addEventListener('click', event => {
-            modal.style.display = "none"
-        })
+        span.addEventListener('click', modal.style.display = "none")
         console.log(parent.id)
     })
 })
