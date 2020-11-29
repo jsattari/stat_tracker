@@ -9,23 +9,12 @@ function httpGet(theUrl) {
 document.querySelectorAll('button').forEach(item => {
     item.addEventListener('click', event => {
         var modal = document.getElementById('myModal');
-        var span = document.getElementsByClassName("close")[0];
+        var span = modal.getElementsByClassName('close')[0];
         var parent = item.parentNode;
         data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + parent.id)
         modal.style.display = "block";
+        span.addEventListener('click', modal.style.display = 'none')
         modal.innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
         console.log(parent.id)
     })
 })
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
