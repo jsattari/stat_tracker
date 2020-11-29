@@ -56,6 +56,8 @@ for (let i = 0; i < data.data.length; i++) {
 
     modContent.className = 'modal-content';
 
+    modContent.setAttribute('id', 'modContent');
+
     spanner.className = 'close';
 
     btnDiv.className = 'button-div';
@@ -65,6 +67,8 @@ for (let i = 0; i < data.data.length; i++) {
     visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
 
     period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
+
+    modContent.innerHTML = '<p></p>';
 
     spanner.innerHTML = "&times;";
 

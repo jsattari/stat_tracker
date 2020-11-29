@@ -13,8 +13,10 @@ document.querySelectorAll('button').forEach(item => {
         var parent = item.parentNode;
         data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + parent.id)
         modal.style.display = "block";
-        span.addEventListener('click', modal.style.display = 'none')
-        modal.innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
+        span.addEventListener('click', event => {
+            modal.style.display = 'none'
+        })
+        modal.getElementById('modContent').getElementByTagName('p').innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
         console.log(parent.id)
     })
 })
