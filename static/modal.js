@@ -6,7 +6,7 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
-function CreateTableFromJSON(array) {
+function CreateTableFromJSON(array, element) {
     var table = document.createElement("table");                             // the table elements
 
     var col = Object.keys(array[0]);                                         // the columns names (I think taking the keys of the first object will suffice)
@@ -38,7 +38,7 @@ function CreateTableFromJSON(array) {
 
     //var divContainer = document.getElementById("showData");
     //divContainer.innerHTML = "";
-    //divContainer.appendChild(table);
+    element.appendChild(table);
 }
 
 document.querySelectorAll('button').forEach(item => {
@@ -51,6 +51,7 @@ document.querySelectorAll('button').forEach(item => {
         span.addEventListener('click', event => {
             modal.style.display = 'none'
         })
-        modal.children[0].children[1].innerHTML = CreateTableFromJSON(data2.data)    //data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
+        // modal.children[0].children[1].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
+        CreateTableFromJSON(data2.data, modal.children[0].children[1])
     })
 })
