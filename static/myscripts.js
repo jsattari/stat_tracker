@@ -30,6 +30,8 @@ for (let i = 0; i < data.data.length; i++) {
 
     smallDiv.setAttribute('id', cow.id);
 
+    var dateDiv = document.createElement('div');
+
     var homeDiv = document.createElement('div');
 
     var visDiv = document.createElement('div');
@@ -52,6 +54,8 @@ for (let i = 0; i < data.data.length; i++) {
 
     period.className = 'period';
 
+    dateDiv.className = 'dates';
+
     myModal.className = 'modal';
 
     modContent.className = 'modal-content';
@@ -61,6 +65,8 @@ for (let i = 0; i < data.data.length; i++) {
     spanner.className = 'close';
 
     btnDiv.className = 'button-div';
+
+    dateDiv.innerText = cow.date;
 
     homeDiv.innerHTML = cow.home_team.abbreviation + ': ' + cow.home_team_score;
 
@@ -73,6 +79,8 @@ for (let i = 0; i < data.data.length; i++) {
     spanner.innerHTML = "&times;";
 
     btnDiv.innerHTML = '<button id="myBtn">Open Modal</button>';
+
+    smallDiv.appendChild(dateDiv);
 
     smallDiv.appendChild(homeDiv);
 

@@ -14,7 +14,7 @@ body {
 .block {
     background-color: lightgrey;
     width: 25%;
-    height: 250px;
+    height: 300px;
     text-align: center;
     line-height: 75px;
     font-size: 45px;
@@ -53,6 +53,13 @@ body {
     font-family: monospace;
     width: 100%;
     height: 40px;
+}
+
+.dates {
+    color: black;
+    font-size: 25px;
+    width: 100%;
+    height: 50px;
 }
 
 /* The Modal (background) */
