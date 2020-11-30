@@ -76,14 +76,14 @@ body {
     /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: whitesmoke;
+    background-color: #808080;
     /* Black w/ opacity */
 }
 
 /* Modal Content */
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: whitesmoke;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -96,8 +96,15 @@ body {
 .close {
     color: #ff0000;
     float: right;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: teal;
 }
 
 button {
