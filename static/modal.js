@@ -25,9 +25,9 @@ function CreateTableFromJSON(array, element) {
         col.forEach(function (key) {                                            // and for each key in col
             var tabCell = tr.insertCell(-1);                                     // create a cell
             if (Array.isArray(obj[key])) {                                       // if the current value is an array, then
-                obj[key].forEach(function (contact) {                               // for each entry in that array
+                obj[key].forEach(function (player) {                               // for each entry in that array
                     var div = document.createElement("div");                         // create a div and fill it
-                    div.textContent = contact.first_name + " " + contact.last_name + ", " + contact.position;
+                    div.textContent = player.first_name + " " + player.last_name;
                     tabCell.appendChild(div);                                        // then add the div to the current cell
                 });
             } else {                                                             // otherwise, if the value is not an array (it's a string)
@@ -36,7 +36,7 @@ function CreateTableFromJSON(array, element) {
         });
     });
 
-    var divContainer = document.getElementsByTagName('p')
+    var divContainer = modal.children[0].children[1]
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
 }
