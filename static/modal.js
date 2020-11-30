@@ -36,9 +36,9 @@ function CreateTableFromJSON(array, element) {
         });
     });
 
-    //var divContainer = document.getElementById("showData");
-    //divContainer.innerHTML = "";
-    element.appendChild(table);
+    var divContainer = document.getElementsByTagName('p')
+    divContainer.innerHTML = "";
+    divContainer.appendChild(table);
 }
 
 document.querySelectorAll('button').forEach(item => {
@@ -52,6 +52,6 @@ document.querySelectorAll('button').forEach(item => {
             modal.style.display = 'none'
         })
         // modal.children[0].children[1].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
-        CreateTableFromJSON(data2.data, modal.children[0].children[1])
+        CreateTableFromJSON(data2.data)
     })
 })
