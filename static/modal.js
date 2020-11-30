@@ -16,6 +16,6 @@ document.querySelectorAll('button').forEach(item => {
         span.addEventListener('click', event => {
             modal.style.display = 'none'
         })
-        modal.children[1].getElementsByTagName('p')[0].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
+        modal.children[0].children[0].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
     })
 })

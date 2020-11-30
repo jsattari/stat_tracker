@@ -44,7 +44,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     var modContent = document.createElement('div');
 
-    var spanner = document.createElement('span')
+    // var spanner = document.createElement('span')
 
     var btnDiv = document.createElement('div')
 
@@ -62,7 +62,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     modContent.setAttribute('id', 'modContent');
 
-    spanner.className = 'close';
+    // spanner.className = 'close';
 
     btnDiv.className = 'button-div';
 
@@ -74,9 +74,9 @@ for (let i = 0; i < data.data.length; i++) {
 
     period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
 
-    modContent.innerHTML = '<p></p>';
+    modContent.innerHTML = '<span class="close">×</span><p></p>';
 
-    spanner.innerHTML = "&times;";
+    // spanner.innerHTML = "&times;";
 
     btnDiv.innerHTML = '<button id="myBtn">Open Modal</button>';
 
@@ -92,7 +92,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     btnDiv.setAttribute('id', cow.id);
 
-    modContent.appendChild(spanner);
+    // modContent.appendChild(spanner);
 
     myModal.appendChild(modContent);
 
