@@ -36,8 +36,8 @@ function CreateTableFromJSON(array, element) {
         });
     });
 
-    var divContainer = modal.children[0].children[1]
-    divContainer.innerHTML = "";
+    var divContainer = element
+    //divContainer.innerHTML = "";
     divContainer.appendChild(table);
 }
 
@@ -52,6 +52,6 @@ document.querySelectorAll('button').forEach(item => {
             modal.style.display = 'none'
         })
         // modal.children[0].children[1].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
-        CreateTableFromJSON(data2.data)
+        CreateTableFromJSON(data2.data, modal.children[0].children[1])
     })
 })
