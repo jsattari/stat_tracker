@@ -51,6 +51,6 @@ document.querySelectorAll('button').forEach(item => {
         span.addEventListener('click', event => {
             modal.style.display = 'none'
         })
-        modal.children[0].children[1].innerHTML = CreateTableFromJSON(data2.data[0])    //data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
+        modal.children[0].children[1].innerHTML = CreateTableFromJSON(data2.data)    //data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
     })
 })
