@@ -84,7 +84,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     btnDiv.setAttribute('id', cow.id);
 
-    myModal.appendChild(spanner);
+    modContent.appendChild(spanner);
 
     myModal.appendChild(modContent);
 
