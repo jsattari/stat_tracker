@@ -123,3 +123,23 @@ p {
 button {
     background-color: whitesmoke;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid black;
+}
+
+tr {
+    background: #ccc;
+}
+
+tr:nth-child(odd) {
+    background: #eee;
+}
+
+td>div {
+    white-space: pre;
+}
