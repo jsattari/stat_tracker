@@ -23,35 +23,33 @@ document.querySelectorAll('button').forEach(item => {
         // row.appendChild(cell);
         // statsList = ['.player.first_name', '.player.last_name', '.team.abbreviation', '.pts', '.reb', '.ast']
         document.querySelectorAll('tBody').forEach(item => {
-            item.addEventListener('click', event => {
 
-                var tableBody = document.getElementById('myTableBody');
+            var tableBody = document.getElementById('myTableBody');
 
-                let row = tableBody.insertRow(-1);
+            let row = tableBody.insertRow(-1);
 
-                let cellNames = row.insertCell(-1);
-                let cellTeam = row.insertCell(-1);
-                let cellPts = row.insertCell(-1);
-                let cellRebs = row.insertCell(-1);
-                let cellAsst = row.insertCell(-1);
+            let cellNames = row.insertCell(-1);
+            let cellTeam = row.insertCell(-1);
+            let cellPts = row.insertCell(-1);
+            let cellRebs = row.insertCell(-1);
+            let cellAsst = row.insertCell(-1);
 
-                let textNames = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
-                let textTeam = parsedData[i].team.abbreviation;
-                let textPts = parsedData[i].pts;
-                let textRebs = parsedData[i].reb;
-                let textAsst = parsedData[i].ast;
+            let textNames = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
+            let textTeam = parsedData[i].team.abbreviation;
+            let textPts = parsedData[i].pts;
+            let textRebs = parsedData[i].reb;
+            let textAsst = parsedData[i].ast;
 
-                cellNames.innerHTML = textNames;
-                cellTeam.innerHTML = textTeam;
-                cellPts.innerHTML = textPts;
-                cellRebs.innerHTML = textRebs;
-                cellAsst.innerHTML = textAsst;
+            cellNames.innerHTML = textNames;
+            cellTeam.innerHTML = textTeam;
+            cellPts.innerHTML = textPts;
+            cellRebs.innerHTML = textRebs;
+            cellAsst.innerHTML = textAsst;
 
-                // tableBody.appendChild(row)
-            })
+            // tableBody.appendChild(row)
         })
-
-        // modal.children[0].children[1].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
-        //CreateTableFromJSON(data2.data, modal.children[0].children[1])
     })
+
+    // modal.children[0].children[1].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
+    //CreateTableFromJSON(data2.data, modal.children[0].children[1])
 })
