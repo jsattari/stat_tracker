@@ -22,13 +22,13 @@ document.querySelectorAll('button').forEach(item => {
             let row = document.createElement('tr');
             let cell = document.createElement('td');
             var names = parsedData.player.first_name + ' ' + parsedData.player.last_name;
-            cell.appendChild(names);
+            cell.innerHTML = names;
             row.appendChild(cell);
             statsList = ['.player.first_name', '.player.last_name', '.team.abbreviation', '.pts', '.reb', '.ast']
             statsList.forEach(item => {
                 let cell = document.createElement('td');
                 var text = parsedData + statsList[item];
-                cell.appendChild(text);
+                cell.innerHTML = text;
                 row.appendChild(cell);
             })
             tableBody.appendChild(row)
