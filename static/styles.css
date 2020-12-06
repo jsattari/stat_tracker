@@ -120,11 +120,6 @@ button {
     background-color: black;
 }
 
-.divTable {
-    height: 95%;
-    width: 95%;
-}
-
 table {
     border-collapse: collapse;
     table-layout: fixed;
@@ -133,10 +128,17 @@ table {
     margin-top: 25px;
 }
 
+.divTable {
+    height: 95%;
+    width: 95%;
+}
+
 td, th {
     border: 1px solid black;
-    background: dimgrey;
+    background: silver;
     color: black;
+    line-height: 15px;
+    font-size: 15px;
 }
 
 tr {
