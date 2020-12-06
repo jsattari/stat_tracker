@@ -92,11 +92,11 @@ body {
 .modal-content {
     background-color: whitesmoke;
     margin: auto;
-    padding: 20px;
+    padding: 5px;
     border: 1px solid #888;
-    height: 60%;
+    height: 750px;
     width: 90%;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 /* The Close Button */
@@ -109,6 +109,7 @@ body {
     line-height: 1.5rem;
     text-align: center;
     cursor: pointer;
+    padding: 5px;
 }
 
 p {

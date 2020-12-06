@@ -74,7 +74,10 @@ for (let i = 0; i < data.data.length; i++) {
 
     period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
 
-    modContent.innerHTML = '<span class="close">×</span><p></p>';
+    modContent.innerHTML = 
+        '<span class="close">×</span><div class="divTable"><table><thead><tr>' +
+        '<th>Player Name</th><th>Team</th><th>Points</th><th>Rebounds</th><th>Assists</th>' +
+        '</tr></thead><tbody></tbody></table></div>';
 
     // spanner.innerHTML = "&times;";
 
