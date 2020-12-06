@@ -26,7 +26,7 @@ document.querySelectorAll('button').forEach(item => {
             var tableBody = document.getElementById('myTableBody');
             for (i = 0; i < data2.data.length; i++) {
 
-                var parsedData = data2.data;
+                var parsedData = data2.data[i];
 
                 var row = tableBody.insertRow(-1);
 
@@ -36,11 +36,11 @@ document.querySelectorAll('button').forEach(item => {
                 var cellRebs = row.insertCell(-1);
                 var cellAsst = row.insertCell(-1);
 
-                cellNames.innerHTML = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
-                cellTeam.innerHTML = parsedData[i].team.abbreviation;
-                cellPts.innerHTML = parsedData[i].pts;
-                cellRebs.innerHTML = parsedData[i].reb;
-                cellAsst.innerHTML = parsedData[i].ast;
+                cellNames.innerHTML = parsedData.player.first_name + ' ' + parsedData[i].player.last_name;
+                cellTeam.innerHTML = parsedData.team.abbreviation;
+                cellPts.innerHTML = parsedData.pts;
+                cellRebs.innerHTML = parsedData.reb;
+                cellAsst.innerHTML = parsedData.ast;
             }
 
             // tableBody.appendChild(row)
