@@ -77,7 +77,7 @@ for (let i = 0; i < data.data.length; i++) {
     modContent.innerHTML =
         '<span class="close">×</span><div class="divTable"><table><thead><tr>' +
         '<th>Player Name</th><th>Team</th><th>Points</th><th>Rebounds</th><th>Assists</th>' +
-        '</tr></thead><tbody></tbody></table></div>';
+        '</tr></thead><tbody id="myTableBody"></tbody></table></div>';
         
     btnDiv.innerHTML = '<button id="myBtn">Open Modal</button>';
 
