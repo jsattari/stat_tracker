@@ -16,7 +16,7 @@ document.querySelectorAll('button').forEach(item => {
         span.addEventListener('click', event => {
             modal.style.display = 'none'
         })
-        var tableBody = document.getElementsById('myTableBody');
+        var tableBody = document.querySelector('tBody');
         var parsedData = data2.data;
         // let cell = document.createElement('td');
         // var names = parsedData.player.first_name + ' ' + parsedData.player.last_name;
@@ -25,7 +25,7 @@ document.querySelectorAll('button').forEach(item => {
         // statsList = ['.player.first_name', '.player.last_name', '.team.abbreviation', '.pts', '.reb', '.ast']
         parsedData.forEach(item => {
             let row = document.createElement('tr');
-            
+
             let cellNames = document.createElement('td');
             let cellTeam = document.createElement('td');
             let cellPts = document.createElement('td');
