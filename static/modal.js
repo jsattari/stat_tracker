@@ -27,13 +27,13 @@ document.querySelectorAll('button').forEach(item => {
 
                 var tableBody = document.getElementById('myTableBody');
 
-                let row = document.createElement('tr');
+                let row = tableBody.insertRow(-1);
 
-                let cellNames = document.createElement('td');
-                let cellTeam = document.createElement('td');
-                let cellPts = document.createElement('td');
-                let cellRebs = document.createElement('td');
-                let cellAsst = document.createElement('td');
+                let cellNames = row.insertCell(-1);
+                let cellTeam = row.insertCell(-1);
+                let cellPts = row.insertCell(-1);
+                let cellRebs = row.insertCell(-1);
+                let cellAsst = row.insertCell(-1);
 
                 let textNames = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
                 let textTeam = parsedData[i].team.abbreviation;
@@ -47,13 +47,7 @@ document.querySelectorAll('button').forEach(item => {
                 cellRebs.innerHTML = textRebs;
                 cellAsst.innerHTML = textAsst;
 
-                row.appendChild(cellNames);
-                row.appendChild(cellTeam);
-                row.appendChild(cellPts);
-                row.appendChild(cellRebs);
-                row.appendChild(cellAsst);
-
-                tableBody.appendChild(row)
+                // tableBody.appendChild(row)
             })
         })
 
