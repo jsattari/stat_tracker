@@ -62,7 +62,9 @@ body {
     height: 50px;
 }
 
-/* The Modal (background) */
+button {
+    background-color: whitesmoke;
+}
 
 .modal {
     display: none;
@@ -110,39 +112,33 @@ body {
     text-align: center;
     cursor: pointer;
     padding: 5px;
-}
-
-p {
-    height: 100%;
-    width: 100%;
+    background-color: blanchedalmond;
 }
 
 .close:hover {
     color: crimson;
+    background-color: black;
 }
 
-button {
-    background-color: whitesmoke;
+.divTable {
+    height: 95%;
+    width: 95%;
 }
 
 table {
     border-collapse: collapse;
-    border-spacing: 0;
-    width: 45%;
+    table-layout: fixed;
+    width: 95%;
+    height: 95%;
+    margin-top: 25px;
 }
 
 td, th {
     border: 1px solid black;
+    background: dimgrey;
+    color: black;
 }
 
 tr {
     background: #ccc;
-}
-
-tr:nth-child(odd) {
-    background: #eee;
-}
-
-td>div {
-    white-space: pre;
 }
