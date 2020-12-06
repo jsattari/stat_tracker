@@ -11,7 +11,6 @@ document.querySelectorAll('button').forEach(item => {
         var modal = document.getElementById('myModal');
         var span = modal.getElementsByClassName('close')[0];
         var parent = item.parentNode;
-        var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + parent.id)
         modal.style.display = "block";
         span.addEventListener('click', event => {
             modal.style.display = 'none'
@@ -23,7 +22,10 @@ document.querySelectorAll('button').forEach(item => {
         // statsList = ['.player.first_name', '.player.last_name', '.team.abbreviation', '.pts', '.reb', '.ast']
         document.querySelectorAll('tBody').forEach(item => {
 
-            var tableBody = document.getElementById('myTableBody');
+            var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + parentElement.parentElement.parentElement.parentElement.parentElement.id)
+
+            var tableBody = item.getElementById('myTableBody');
+            
             for (i = 0; i < data2.data.length; i++) {
 
                 var parsedData = data2.data[i];
