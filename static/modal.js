@@ -16,7 +16,6 @@ document.querySelectorAll('button').forEach(item => {
         span.addEventListener('click', event => {
             modal.style.display = 'none'
         })
-        var parsedData = data2.data;
         // let cell = document.createElement('td');
         // var names = parsedData.player.first_name + ' ' + parsedData.player.last_name;
         // cell.innerHTML = names;
@@ -25,26 +24,24 @@ document.querySelectorAll('button').forEach(item => {
         document.querySelectorAll('tBody').forEach(item => {
 
             var tableBody = document.getElementById('myTableBody');
+            for (i = 0; i < data2.data.length; i++) {
 
-            let row = tableBody.insertRow(-1);
+                var parsedData = data2.data;
 
-            let cellNames = row.insertCell(-1);
-            let cellTeam = row.insertCell(-1);
-            let cellPts = row.insertCell(-1);
-            let cellRebs = row.insertCell(-1);
-            let cellAsst = row.insertCell(-1);
+                var row = tableBody.insertRow(-1);
 
-            let textNames = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
-            let textTeam = parsedData[i].team.abbreviation;
-            let textPts = parsedData[i].pts;
-            let textRebs = parsedData[i].reb;
-            let textAsst = parsedData[i].ast;
+                var cellNames = row.insertCell(-1);
+                var cellTeam = row.insertCell(-1);
+                var cellPts = row.insertCell(-1);
+                var cellRebs = row.insertCell(-1);
+                var cellAsst = row.insertCell(-1);
 
-            cellNames.innerHTML = textNames;
-            cellTeam.innerHTML = textTeam;
-            cellPts.innerHTML = textPts;
-            cellRebs.innerHTML = textRebs;
-            cellAsst.innerHTML = textAsst;
+                cellNames.innerHTML = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
+                cellTeam.innerHTML = parsedData[i].team.abbreviation;
+                cellPts.innerHTML = parsedData[i].pts;
+                cellRebs.innerHTML = parsedData[i].reb;
+                cellAsst.innerHTML = parsedData[i].ast;
+            }
 
             // tableBody.appendChild(row)
         })
