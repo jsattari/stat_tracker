@@ -23,7 +23,8 @@ document.querySelectorAll('button').forEach(item => {
         // cell.innerHTML = names;
         // row.appendChild(cell);
         // statsList = ['.player.first_name', '.player.last_name', '.team.abbreviation', '.pts', '.reb', '.ast']
-        parsedData.forEach(item => {
+        for(i = 0; i < parsedData.length; i++) {
+
             let row = document.createElement('tr');
 
             let cellNames = document.createElement('td');
@@ -32,11 +33,11 @@ document.querySelectorAll('button').forEach(item => {
             let cellRebs = document.createElement('td');
             let cellAsst = document.createElement('td');
 
-            let textNames = parsedData.player.first_name + ' ' + parsedData.player.last_name;
-            let textTeam = parsedData.team.abbreviation;
-            let textPts = parsedData.pts;
-            let textRebs = parsedData.reb;
-            let textAsst = parsedData.ast;
+            let textNames = parsedData[i].player.first_name + ' ' + parsedData[i].player.last_name;
+            let textTeam = parsedData[i].team.abbreviation;
+            let textPts = parsedData[i].pts;
+            let textRebs = parsedData[i].reb;
+            let textAsst = parsedData[i].ast;
 
             cellNames.innerHTML = textNames;
             cellTeam.innerHTML = textTeam;
@@ -49,7 +50,7 @@ document.querySelectorAll('button').forEach(item => {
             row.appendChild(cellPts);
             row.appendChild(cellRebs);
             row.appendChild(cellAsst);
-        })
+        }
         tableBody.appendChild(row)
 
         // modal.children[0].children[1].innerHTML = data2.data[0].player.first_name + ' ' + data2.data[0].player.last_name
