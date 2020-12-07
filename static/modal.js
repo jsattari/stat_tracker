@@ -20,7 +20,16 @@ document.querySelectorAll('button').forEach(item => {
 
         var tableBody = document.querySelector('tBody');
 
-        var col = Object.keys(data2.data[0]); 
+        var lunch = {
+            first: 'player.first_name',
+            last: 'player.last_name',
+            team: 'team.abbreviation',
+            pts: 'pts',
+            rebs: 'reb',
+            asst: 'ast'
+        };
+
+        var col = Object.keys(lunch); 
 
         data2.data.forEach(function (obj) {                                            // for each object obj in company_info
             var tr = tableBody.insertRow(-1);                                          // create a row for it
@@ -29,7 +38,7 @@ document.querySelectorAll('button').forEach(item => {
                 if (Array.isArray(obj[key])) {                                       // if the current value is an array, then
                     obj[key].forEach(function (player) {                               // for each entry in that array
                         var div = document.createElement("div");                         // create a div and fill it
-                        div.textContent = player.first_name + " " + player.last_name;
+                        // div.textContent = player.first_name + " " + player.last_name;
                         tabCell.appendChild(div);                                        // then add the div to the current cell
                     });
                 } else {                                                             // otherwise, if the value is not an array (it's a string)
