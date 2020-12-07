@@ -20,23 +20,20 @@ document.querySelectorAll('button').forEach(item => {
 
         var tableBody = document.querySelector('tBody');
 
-        for (i = 0; i < data2.data.length; i++) {
-
-            var parsedData = data2.data[i];
-
-            var row = tableBody.insertRow(-1);
-
-            var cellNames = row.insertCell(-1);
-            var cellTeam = row.insertCell(-1);
-            var cellPts = row.insertCell(-1);
-            var cellRebs = row.insertCell(-1);
-            var cellAsst = row.insertCell(-1);
-
-            cellNames.innerHTML = parsedData.player.first_name + ' ' + parsedData.player.last_name;
-            cellTeam.innerHTML = parsedData.team.abbreviation;
-            cellPts.innerHTML = parsedData.pts;
-            cellRebs.innerHTML = parsedData.reb;
-            cellAsst.innerHTML = parsedData.ast;
-        }
+        data2.data.forEach(function (obj) {                                            // for each object obj in company_info
+            var tr = tableBody.insertRow(-1);                                          // create a row for it
+            col.forEach(function (key) {                                            // and for each key in col
+                var tabCell = tr.insertCell(-1);                                     // create a cell
+                if (Array.isArray(obj[key])) {                                       // if the current value is an array, then
+                    obj[key].forEach(function (player) {                               // for each entry in that array
+                        var div = document.createElement("div");                         // create a div and fill it
+                        div.textContent = player.first_name + " " + player.last_name;
+                        tabCell.appendChild(div);                                        // then add the div to the current cell
+                    });
+                } else {                                                             // otherwise, if the value is not an array (it's a string)
+                    tabCell.textContent = obj[key];                                    // add it as text
+                }
+            });
+        });
     })
 })
