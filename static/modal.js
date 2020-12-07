@@ -29,20 +29,20 @@ document.querySelectorAll('button').forEach(item => {
             asst: 'ast'
         };
 
-        var col = Object.keys(lunch); 
+        var col = Object.values(lunch); 
 
         data2.data.forEach(function (obj) {                                            // for each object obj in company_info
             var tr = tableBody.insertRow(-1);                                          // create a row for it
-            col.forEach(function (key) {                                            // and for each key in col
+            col.forEach(function (value) {                                            // and for each key in col
                 var tabCell = tr.insertCell(-1);                                     // create a cell
-                if (Array.isArray(obj[key])) {                                       // if the current value is an array, then
-                    obj[key].forEach(function (player) {                               // for each entry in that array
+                if (Array.isArray(obj[value])) {                                       // if the current value is an array, then
+                    obj[value].forEach(function (player) {                               // for each entry in that array
                         var div = document.createElement("div");                         // create a div and fill it
                         // div.textContent = player.first_name + " " + player.last_name;
                         tabCell.appendChild(div);                                        // then add the div to the current cell
                     });
                 } else {                                                             // otherwise, if the value is not an array (it's a string)
-                    tabCell.textContent = obj[key];                                    // add it as text
+                    tabCell.textContent = obj[value];                                    // add it as text
                 }
             });
         });
