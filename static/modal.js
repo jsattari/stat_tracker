@@ -21,9 +21,9 @@ document.querySelectorAll('button').forEach(item => {
         var tableBody = document.querySelector('tBody');
 
         var lunch = {
-            first: 'player.first_name',
-            last: 'player.last_name',
-            team: 'team.abbreviation',
+            first: 'first_name',
+            last: 'last_name',
+            team: 'abbreviation',
             pts: 'pts',
             rebs: 'reb',
             asst: 'ast'
