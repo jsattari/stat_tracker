@@ -20,6 +20,8 @@ document.querySelectorAll('button').forEach(item => {
 
         var tableBody = document.querySelector('tBody');
 
+        var col = Object.keys(data2.data[0]); 
+
         data2.data.forEach(function (obj) {                                            // for each object obj in company_info
             var tr = tableBody.insertRow(-1);                                          // create a row for it
             col.forEach(function (key) {                                            // and for each key in col
