@@ -35,14 +35,14 @@ document.querySelectorAll('button').forEach(item => {
             var tr = tableBody.insertRow(-1);                                          // create a row for it
             col.forEach(function (value) {                                            // and for each key in col
                 var tabCell = tr.insertCell(-1);                                     // create a cell
-                if (Array.isArray(obj[value])) {                                       // if the current value is an array, then
-                    obj[value].forEach(function (player) {                               // for each entry in that array
+                if (Array.isArray(obj.value)) {                                       // if the current value is an array, then
+                    obj.value.forEach(function (player) {                               // for each entry in that array
                         var div = document.createElement("div");                         // create a div and fill it
                         // div.textContent = player.first_name + " " + player.last_name;
                         tabCell.appendChild(div);                                        // then add the div to the current cell
                     });
                 } else {                                                             // otherwise, if the value is not an array (it's a string)
-                    tabCell.textContent = obj[value];                                    // add it as text
+                    tabCell.textContent = obj.value;                                    // add it as text
                 }
             });
         });
