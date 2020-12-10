@@ -37,7 +37,7 @@ document.querySelectorAll('button').forEach(item => {
             col.forEach(function (value) {                                            // and for each key in col
                 var tabCell = tr.insertCell(-1);                                     // create a cell
                 tabCell.textContent = obj.value
-            var tableDiv = document.getElementById(parent.id);
+            var tableDiv = document.getElementById('table' + parent.id);
             tableDiv.appendChild(tableGuy);
             });
         });
