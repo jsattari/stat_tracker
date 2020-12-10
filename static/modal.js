@@ -30,7 +30,7 @@ function makeTable(id) {
 
         Object.keys(lunch).forEach(function (item) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = chunk.lunch[key];
+            tabCell.innerHTML = chunk.lunch[item];
         })
     }
     tableDiv.appendChild(tableGuy);
