@@ -6,6 +6,7 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
+// function to get table and insert data
 function makeTable(id) {
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
@@ -22,16 +23,18 @@ function makeTable(id) {
 
     var tableDiv = document.getElementById('table' + id);
 
-    tableGuy = document.createElement('table'); 
+    tableGuy = document.createElement('table');
 
     for (var i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
         var tr = tableGuy.insertRow(-1);
-
-        Object.keys(lunch).forEach(function (item) {
-            var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = chunk.lunch[item];
-        })
+        var tabCell = tr.insertCell(-1);
+        tabCell.innerHTML = chunk.player.first_name;
+        tabCell.innerHTML = chunk.player.last_name;
+        tabCell.innerHTML = chunk.player.team.abbreviation;
+        tabCell.innerHTML = chunk.player.pts;
+        tabCell.innerHTML = chunk.player.reb;
+        tabCell.innerHTML = chunk.player.ast;
     }
     tableDiv.appendChild(tableGuy);
 }
