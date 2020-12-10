@@ -18,7 +18,7 @@ function makeTable(id) {
         asst: 'ast'
     };
 
-    var col = Object.values(lunch);
+    //var col = Object.values(lunch);
 
     var tableDiv = document.getElementById('table' + id);
 
@@ -27,9 +27,10 @@ function makeTable(id) {
     for (var i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
         var tr = tableGuy.insertRow(-1);
-        col.forEach(function (value) {
+
+        Object.keys(lunch).forEach(function (item) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = chunk.value
+            tabCell.innerHTML = chunk.lunch[key];
         })
     }
     tableDiv.appendChild(tableGuy);
