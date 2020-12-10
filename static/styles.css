@@ -123,15 +123,15 @@ button {
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 98%;
+    width: 99%;
     height: 95%;
     margin-top: 25px;
-    overflow: scroll;
 }
 
 .divTable {
-    height: 95%;
-    width: 95%;
+    height: 650px;
+    width: 98%;
+    overflow: scroll;
 }
 
 td, th {

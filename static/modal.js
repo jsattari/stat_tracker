@@ -24,13 +24,14 @@ function makeTable(id) {
 
     tableGuy = document.createElement('table'); 
 
-    data2.data.forEach(function (obj) {
+    for (var i = 0; i < data2.data.length; i++) {
+        var chunk = data2.data[i];
         var tr = tableGuy.insertRow(-1);
         col.forEach(function (value) {
             var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = col.value
+            tabCell.innerHTML = chunk.value
         })
-    })
+    }
     tableDiv.appendChild(tableGuy);
 }
 
