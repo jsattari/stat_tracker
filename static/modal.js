@@ -6,6 +6,34 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
+function makeTable(id) {
+    var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
+
+    var lunch = {
+        first: 'player.first_name',
+        last: 'player.last_name',
+        team: 'team.abbreviation',
+        pts: 'pts',
+        rebs: 'reb',
+        asst: 'ast'
+    };
+
+    var col = Object.values(lunch);
+
+    var tableDiv = document.getElementById('table' + id);
+
+    tableGuy = document.createElement('table'); 
+
+    data2.data.forEach(function (obj) {                                   // for each object obj in company_info
+        var tr = tableGuy.insertRow(-1);                                          // create a row for it
+        col.forEach(function (value) {                                            // and for each key in col
+            var tabCell = tr.insertCell(-1);                                     // create a cell
+            tabCell.textContent = obj.value
+        })
+    })
+    tableDiv.appendChild(tableGuy);
+}
+
 document.querySelectorAll('button').forEach(item => {
     item.addEventListener('click', event => {
         var modal = document.getElementById('myModal');
@@ -15,31 +43,6 @@ document.querySelectorAll('button').forEach(item => {
             modal.style.display = 'none'
         })
         var parent = item.parentNode;
-
-        var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + parent.id)
-
-        var tableBody = document.querySelector('tBody');
-
-        var lunch = {
-            first: 'player.first_name',
-            last: 'player.last_name',
-            team: 'team.abbreviation',
-            pts: 'pts',
-            rebs: 'reb',
-            asst: 'ast'
-        };
-
-        var col = Object.values(lunch);
-
-        data2.data.forEach(function (obj) {        
-            tableGuy = document.createElement('table');                                    // for each object obj in company_info
-            var tr = tableGuy.insertRow(-1);                                          // create a row for it
-            col.forEach(function (value) {                                            // and for each key in col
-                var tabCell = tr.insertCell(-1);                                     // create a cell
-                tabCell.textContent = obj.value
-            var tableDiv = document.getElementById('table' + parent.id);
-            tableDiv.appendChild(tableGuy);
-            });
-        });
+        makeTable(parent.id);
     })
 })
