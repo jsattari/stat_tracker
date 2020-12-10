@@ -123,9 +123,10 @@ button {
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 95%;
+    width: 98%;
     height: 95%;
     margin-top: 25px;
+    overflow: scroll;
 }
 
 .divTable {

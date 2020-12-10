@@ -24,11 +24,11 @@ function makeTable(id) {
 
     tableGuy = document.createElement('table'); 
 
-    data2.data.forEach(function (obj) {                                   // for each object obj in company_info
-        var tr = tableGuy.insertRow(-1);                                          // create a row for it
-        col.forEach(function (value) {                                            // and for each key in col
-            var tabCell = tr.insertCell(-1);                                     // create a cell
-            tabCell.textContent = obj.value
+    data2.data.forEach(function (obj) {
+        var tr = tableGuy.insertRow(-1);
+        col.forEach(function (value) {
+            var tabCell = tr.insertCell(-1);
+            tabCell.innerHTML = col.value
         })
     })
     tableDiv.appendChild(tableGuy);
