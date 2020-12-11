@@ -12,6 +12,7 @@ function makeTable(id) {
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
     var tableDiv = document.getElementById('table' + id);
+    console.log(id)
 
     tableGuy = document.createElement('table');
 
