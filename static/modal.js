@@ -16,14 +16,25 @@ function makeTable(id) {
 
     for (var i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
-        var tr = tableGuy.insertRow(-1);
-        var tabCell = tr.insertCell(-1);
-        tabCell.innerHTML = chunk.player.first_name;
-        tabCell.innerHTML = chunk.last_name;
-        tabCell.innerHTML = chunk.team.abbreviation;
-        tabCell.innerHTML = chunk.player.pts;
-        tabCell.innerHTML = chunk.player.reb;
-        tabCell.innerHTML = chunk.player.ast;
+        var tr = document.createElement('tr');
+        var fname = document.createElement('td');
+        var lname = document.createElement('td');
+        var tname = document.createElement('td');
+        var ptsstat = document.createElement('td');
+        var rebstat = document.createElement('td');
+        var aststat = document.createElement('td');
+        fname.innerHTML = chunk.player.first_name;
+        lname.innerHTML = chunk.last_name;
+        tname.innerHTML = chunk.team.abbreviation;
+        ptsstat.innerHTML = chunk.player.pts;
+        rebstat.innerHTML = chunk.player.reb;
+        aststat.innerHTML = chunk.player.ast;
+        tr.appendChild(fname);
+        tr.appendChild(lname);
+        tr.appendChild(tname);
+        tr.appendChild(ptsstat);
+        tr.appendChild(rebstat);
+        tr.appendChild(aststat);
     }
     tableDiv.appendChild(tableGuy);
 }
