@@ -8,6 +8,7 @@ function httpGet(theUrl) {
 
 // function to get table and insert data
 function makeTable(id) {
+    
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
     var tableDiv = document.getElementById('table' + id);
@@ -24,17 +25,18 @@ function makeTable(id) {
         var rebstat = document.createElement('td');
         var aststat = document.createElement('td');
         fname.innerHTML = chunk.player.first_name;
-        lname.innerHTML = chunk.last_name;
+        lname.innerHTML = chunk.player.last_name;
         tname.innerHTML = chunk.team.abbreviation;
-        ptsstat.innerHTML = chunk.player.pts;
-        rebstat.innerHTML = chunk.player.reb;
-        aststat.innerHTML = chunk.player.ast;
+        ptsstat.innerHTML = chunk.pts;
+        rebstat.innerHTML = chunk.reb;
+        aststat.innerHTML = chunk.ast;
         tr.appendChild(fname);
         tr.appendChild(lname);
         tr.appendChild(tname);
         tr.appendChild(ptsstat);
         tr.appendChild(rebstat);
         tr.appendChild(aststat);
+        tableGuy.appendChild(tr);
     }
     tableDiv.appendChild(tableGuy);
 }
@@ -48,6 +50,7 @@ document.querySelectorAll('button').forEach(item => {
             modal.style.display = 'none'
         })
         var parent = item.parentNode;
+        console.log(parent.id)
         makeTable(parent.id);
     })
 })
