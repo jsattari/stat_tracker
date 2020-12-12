@@ -12,27 +12,30 @@ function makeTable(id) {
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
     var tableDiv = document.getElementById('table' + id);
-    console.log(id)
 
-    tableGuy = document.createElement('table');
+    var tableGuy = document.createElement('table');
+    var header = document.createElement('th');
+
+    header.innerHTML = '<td>Name</td><td>Team</td><td>Points</td><td>Rebounds</td><td>Assists</td>'
+    tableGuy.appendChild(header);
 
     for (var i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
         var tr = document.createElement('tr');
         var fname = document.createElement('td');
-        var lname = document.createElement('td');
+        // var lname = document.createElement('td');
         var tname = document.createElement('td');
         var ptsstat = document.createElement('td');
         var rebstat = document.createElement('td');
         var aststat = document.createElement('td');
-        fname.innerHTML = chunk.player.first_name;
-        lname.innerHTML = chunk.player.last_name;
+        fname.innerHTML = chunk.player.first_name + ' ' + chunk.player.last_name;
+        // lname.innerHTML = chunk.player.last_name;
         tname.innerHTML = chunk.team.abbreviation;
         ptsstat.innerHTML = chunk.pts;
         rebstat.innerHTML = chunk.reb;
         aststat.innerHTML = chunk.ast;
         tr.appendChild(fname);
-        tr.appendChild(lname);
+        // tr.appendChild(lname);
         tr.appendChild(tname);
         tr.appendChild(ptsstat);
         tr.appendChild(rebstat);
