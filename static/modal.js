@@ -8,7 +8,6 @@ function httpGet(theUrl) {
 
 // function to get table and insert data
 function makeTable(id) {
-    console.log(id)
 
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
