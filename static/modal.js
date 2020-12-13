@@ -24,7 +24,7 @@ function makeTable(id) {
         <th>Rebounds</th>
         <th>Assists</th>`;
         
-    for (var i = 0; i < data2.data.length; i++) {
+    for (let i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
         tableGuy.insertRow(i+1).innerHTML = 
             `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
@@ -39,7 +39,7 @@ function makeTable(id) {
 
 document.querySelectorAll('button').forEach(item => {
     item.addEventListener('click', event => {
-        var modal = document.getElementById('myModal');
+        let modal = document.getElementById('myModal');
         var span = modal.getElementsByClassName('close')[0];
         modal.style.display = "block";
         span.addEventListener('click', event => {

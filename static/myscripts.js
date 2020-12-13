@@ -75,7 +75,7 @@ for (let i = 0; i < data.data.length; i++) {
     period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
 
     modContent.innerHTML =
-        `<p id='statsheet'>STATS</p><span class="close">×</span><div class="divTable"><table id=table${cow.id}></table></div>`;
+        `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}><table></table></div>`;
         
     btnDiv.innerHTML = '<button id="myBtn">Get More Stats</button>';
 
