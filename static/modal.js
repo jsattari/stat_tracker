@@ -38,7 +38,7 @@ function makeTable(id) {
 
 document.querySelectorAll('button').forEach(item => {
     item.addEventListener('click', event => {
-        let modal = document.getElementById('myModal');
+        let modal = item.parentNode.parentNode.lastElementChild;
         var span = modal.getElementsByClassName('close')[0];
         modal.style.display = "block";
         span.addEventListener('click', event => {
