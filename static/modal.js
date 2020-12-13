@@ -8,15 +8,15 @@ function httpGet(theUrl) {
 
 // function to get table and insert data
 function makeTable(id) {
-    
+
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
     var tableDiv = document.getElementById('table' + id);
 
     var tableGuy = document.createElement('table');
-    var header = document.createElement('th');
+    var header = document.createElement('tr');
 
-    header.innerHTML = '<td>Name</td><td>Team</td><td>Points</td><td>Rebounds</td><td>Assists</td>'
+    header.innerHTML = '<th>Name</th><th>Team</th><th>Points</th><th>Rebounds</th><th>Assists</th>'
     tableGuy.appendChild(header);
 
     for (var i = 0; i < data2.data.length; i++) {

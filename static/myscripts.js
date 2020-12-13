@@ -75,9 +75,9 @@ for (let i = 0; i < data.data.length; i++) {
     period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
 
     modContent.innerHTML =
-        `<span class="close">×</span><div class="divTable" id=table${cow.id}></div>`;
+        `<span class="close">×</span><div class="divTable"><table id=table${cow.id}></table></div>`;
         
-    btnDiv.innerHTML = '<button id="myBtn">Open Modal</button>';
+    btnDiv.innerHTML = '<button id="myBtn">Get More Stats</button>';
 
     smallDiv.appendChild(dateDiv);
 
