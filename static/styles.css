@@ -146,3 +146,13 @@ td, th {
 tr {
     background: #ccc;
 }
+
+#statsheet {
+    float: left;
+    line-height: 1.5em;
+    width: 97%;
+    margin: auto;
+    font-size: 25px;
+    background-color: transparent;
+    text-align: center;
+}

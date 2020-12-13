@@ -8,39 +8,31 @@ function httpGet(theUrl) {
 
 // function to get table and insert data
 function makeTable(id) {
+    console.log(id)
 
     var data2 = httpGet('https://www.balldontlie.io/api/v1/stats?game_ids[]=' + id)
 
     var tableDiv = document.getElementById('table' + id);
 
     var tableGuy = document.createElement('table');
-    var header = document.createElement('tr');
 
-    header.innerHTML = '<th>Name</th><th>Team</th><th>Points</th><th>Rebounds</th><th>Assists</th>'
-    tableGuy.appendChild(header);
-
+    tableGuy.insertRow(0).innerHTML = 
+        `<th>Name</th>
+        <th>Team</th>
+        <th>Min Played</th>
+        <th>Points</th>
+        <th>Rebounds</th>
+        <th>Assists</th>`;
+        
     for (var i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
-        var tr = document.createElement('tr');
-        var fname = document.createElement('td');
-        // var lname = document.createElement('td');
-        var tname = document.createElement('td');
-        var ptsstat = document.createElement('td');
-        var rebstat = document.createElement('td');
-        var aststat = document.createElement('td');
-        fname.innerHTML = chunk.player.first_name + ' ' + chunk.player.last_name;
-        // lname.innerHTML = chunk.player.last_name;
-        tname.innerHTML = chunk.team.abbreviation;
-        ptsstat.innerHTML = chunk.pts;
-        rebstat.innerHTML = chunk.reb;
-        aststat.innerHTML = chunk.ast;
-        tr.appendChild(fname);
-        // tr.appendChild(lname);
-        tr.appendChild(tname);
-        tr.appendChild(ptsstat);
-        tr.appendChild(rebstat);
-        tr.appendChild(aststat);
-        tableGuy.appendChild(tr);
+        tableGuy.insertRow(i+1).innerHTML = 
+            `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
+            <td>${chunk.team.abbreviation}</td>
+            <td>${chunk.min}</td>
+            <td>${chunk.pts}</td>
+            <td>${chunk.reb}</td>
+            <td>${chunk.ast}</td>`;
     }
     tableDiv.appendChild(tableGuy);
 }
@@ -53,8 +45,6 @@ document.querySelectorAll('button').forEach(item => {
         span.addEventListener('click', event => {
             modal.style.display = 'none'
         })
-        var parent = item.parentNode;
-        console.log(parent.id)
-        makeTable(parent.id);
+        makeTable(item.parentNode.id);
     })
 })
