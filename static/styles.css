@@ -119,18 +119,18 @@ button {
     background-color: transparent;
 }
 
-table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 99%;
-    height: 95%;
-    margin: 5px auto auto auto;
-}
-
 .divTable {
     height: 90%;
     width: 100%;
     overflow: scroll;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 99%;
+    height: 95%;
+    margin: 5px auto auto auto;
 }
 
 td, th {
@@ -146,7 +146,7 @@ tr {
 }
 
 thead tr th:first-child, tbody tr td:first-child {
-    width: 10em;
+    width: 12em;
     min-width: 8em;
     max-width: 15em;
     word-break: keep-all;
