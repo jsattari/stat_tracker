@@ -41,7 +41,7 @@ function makeTable(id) {
             <td>${chunk.blk}</td>
             <td>${chunk.stl}</td>`;
     }
-    tableGuy.insertRow(tableGuy.rows.length + 1).innerHTML =
+    tableGuy.insertRow(tableGuy.rows.length).innerHTML =
         `<tr><th>AWAY</th></tr>`;
     tableDiv.appendChild(tableGuy);
 }
