@@ -9,11 +9,13 @@ function httpGet(theUrl) {
 // dates for api pulls
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-date.setDate(date.getDate() - 2);
+date.setDate(date.getDate() - 90);
 var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
 // variable to hold data
 var data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
+console.log(startDate)
+console.log(endDate)
 
 // create flexbox
 var flex = document.createElement('div');
