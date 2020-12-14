@@ -78,7 +78,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     modContent.innerHTML =
         `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}></div>`;
-        
+
     btnDiv.innerHTML = '<button id="myBtn">Get More Stats</button>';
 
     smallDiv.appendChild(dateDiv);

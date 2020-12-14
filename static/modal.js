@@ -15,23 +15,29 @@ function makeTable(id) {
 
     var tableGuy = document.createElement('table');
 
-    tableGuy.insertRow(0).innerHTML = 
+    tableGuy.insertRow(0).innerHTML =
         `<th>Name</th>
         <th>Team</th>
         <th>Min Played</th>
         <th>Points</th>
+        <th>FG%</th>
         <th>Rebounds</th>
-        <th>Assists</th>`;
-        
+        <th>Assists</th>
+        <th>Blocks</th>
+        <th>Steals</th`;
+
     for (let i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
-        tableGuy.insertRow(i+1).innerHTML = 
+        tableGuy.insertRow(i + 1).innerHTML =
             `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
             <td>${chunk.team.abbreviation}</td>
             <td>${chunk.min}</td>
             <td>${chunk.pts}</td>
+            <td>${chunk.fg_pct}</td>
             <td>${chunk.reb}</td>
-            <td>${chunk.ast}</td>`;
+            <td>${chunk.ast}</td>
+            <td>${chunk.blk}</td>
+            <td>${chunk.stl}</td>`;
     }
     tableDiv.appendChild(tableGuy);
 }
