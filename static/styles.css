@@ -31,6 +31,13 @@ body {
     font-size: 45px;
     margin: 5px 1px 0px 0px;
     font-family: monospace;
+    color: black;
+}
+
+.block:hover {
+    background-color: black;
+    color: whitesmoke;
+    border: 2px whitesmoke solid;
 }
 
 .dates {
