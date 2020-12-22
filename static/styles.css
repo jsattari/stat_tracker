@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 body {
     background-color: black;
 }
@@ -6,7 +8,7 @@ body {
     background-color: transparent;
     text-align: center;
     font-size: xxx-large;
-    font-family: monospace;
+    font-family: Bangers;
     color: crimson;
     width: 100%;
     height: auto;
@@ -30,20 +32,19 @@ body {
     line-height: 75px;
     font-size: 45px;
     margin: 5px 1px 0px 0px;
-    font-family: monospace;
+    font-family: inherit;
     color: black;
 }
 
 .block:hover {
     background-color: black;
     color: whitesmoke;
-    border: 2px whitesmoke solid;
 }
 
 .dates {
     background-color: inherit;
     color: inherit;
-    font-size: 25px;
+    font-size: large;
     width: 100%;
     height: x-large;
 }
