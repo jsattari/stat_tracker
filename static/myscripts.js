@@ -6,6 +6,17 @@ function httpGet(theUrl) {
     return JSON.parse(xmlHttp.response);
 }
 
+// date formatter
+function dateChanger(date) {
+    const newDate = new Date(date)
+    formattedDate = newDate.toLocaleDateString('en-US', {
+      month: 'numeric',
+      day: '2-digit',
+      year: 'numeric'
+    })
+    return formattedDate
+  }
+
 // dates for api pulls
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -68,7 +79,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     btnDiv.className = 'button-div';
 
-    dateDiv.innerText = cow.date;
+    dateDiv.innerText = dateChanger(cow.date);
 
     homeDiv.innerHTML = cow.home_team.abbreviation + ': ' + cow.home_team_score;
 
