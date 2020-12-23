@@ -19,7 +19,7 @@ body {
     flex-direction: row;
     background-color: transparent;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
     font-family: Bangers;
     padding: 16px;
 }
@@ -31,7 +31,7 @@ body {
     text-align: center;
     line-height: 75px;
     font-size: 45px;
-    margin: 5px 1px 0px 0px;
+    margin: 1px;
     font-family: inherit;
     color: black;
 }

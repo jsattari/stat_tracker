@@ -85,7 +85,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
 
-    period.innerHTML = cow.time + ' | ' + cow.period + 'Q | ' + cow.status + ' ';
+    period.innerHTML = cow.time + ' ' + cow.period + 'Q - ' + cow.status + ' ';
 
     modContent.innerHTML =
         `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}></div>`;
