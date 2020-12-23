@@ -2,17 +2,6 @@ body {
     background-color: black;
 }
 
-.scoreboard {
-    background-color: transparent;
-    text-align: center;
-    font-size: xxx-large;
-    font-family: Bangers;
-    color: crimson;
-    width: 100%;
-    height: auto;
-    margin: 0px 0px 10px 0px;
-}
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -22,6 +11,17 @@ body {
     justify-content: left;
     font-family: Bangers;
     padding: 16px;
+}
+
+.scoreboard {
+    background-color: transparent;
+    text-align: center;
+    font-size: xxx-large;
+    font-family: Bangers;
+    color: crimson;
+    width: 100%;
+    height: auto;
+    margin: 0px;
 }
 
 .block {
