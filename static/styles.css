@@ -20,6 +20,8 @@ body {
     background-color: transparent;
     width: 100%;
     justify-content: center;
+    font-family: Bangers;
+    padding: 16px;
 }
 
 .block {

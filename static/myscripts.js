@@ -20,7 +20,7 @@ function dateChanger(date) {
 // dates for api pulls
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-date.setDate(date.getDate() - 90);
+date.setDate(date.getDate() - 1);
 var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
 // variable to hold data
