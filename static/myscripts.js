@@ -79,7 +79,7 @@ for (let i = 0; i < data.data.length; i++) {
 
     btnDiv.className = 'button-div';
 
-    dateDiv.innerText = dateChanger(cow.game.date);
+    dateDiv.innerText = dateChanger(cow.date);
 
     homeDiv.innerHTML = cow.home_team.abbreviation + ': ' + cow.home_team_score;
 
