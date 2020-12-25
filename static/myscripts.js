@@ -1,21 +1,22 @@
 // function to make api call
 function httpGet(theUrl) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", theUrl, false); // false for synchronous request
-    xmlHttp.send(null);
-    return JSON.parse(xmlHttp.response);
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("GET", theUrl, false); // false for synchronous request
+  xmlHttp.send(null);
+  return JSON.parse(xmlHttp.response);
 }
 
 // date formatter
 function dateChanger(date) {
-    const newDate = new Date(date)
-    formattedDate = newDate.toLocaleDateString('en-US', {
-      month: 'numeric',
-      day: '2-digit',
-      year: 'numeric'
-    })
-    return formattedDate
-  }
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + 1);
+  formattedDate = newDate.toLocaleDateString('en-US', {
+    month: 'numeric',
+    day: '2-digit',
+    year: 'numeric'
+  })
+  return formattedDate
+}
 
 // dates for api pulls
 var date = new Date();
@@ -35,83 +36,83 @@ var flex = document.createElement('div');
 flex.className = 'flex-container';
 
 for (let i = 0; i < data.data.length; i++) {
-    var cow = data.data[i];
+  var cow = data.data[i];
 
-    var smallDiv = document.createElement('div');
+  var smallDiv = document.createElement('div');
 
-    smallDiv.className = 'block';
+  smallDiv.className = 'block';
 
-    smallDiv.setAttribute('id', cow.id);
+  smallDiv.setAttribute('id', cow.id);
 
-    var dateDiv = document.createElement('div');
+  var dateDiv = document.createElement('div');
 
-    var homeDiv = document.createElement('div');
+  var homeDiv = document.createElement('div');
 
-    var visDiv = document.createElement('div');
+  var visDiv = document.createElement('div');
 
-    var period = document.createElement('div');
+  var period = document.createElement('div');
 
-    var myModal = document.createElement('div');
+  var myModal = document.createElement('div');
 
-    myModal.setAttribute('id', 'myModal');
+  myModal.setAttribute('id', 'myModal');
 
-    var modContent = document.createElement('div');
+  var modContent = document.createElement('div');
 
-    // var spanner = document.createElement('span')
+  // var spanner = document.createElement('span')
 
-    var btnDiv = document.createElement('div')
+  var btnDiv = document.createElement('div')
 
-    homeDiv.className = 'homeDiv';
+  homeDiv.className = 'homeDiv';
 
-    visDiv.className = 'visDiv';
+  visDiv.className = 'visDiv';
 
-    period.className = 'period';
+  period.className = 'period';
 
-    dateDiv.className = 'dates';
+  dateDiv.className = 'dates';
 
-    myModal.className = 'modal';
+  myModal.className = 'modal';
 
-    modContent.className = 'modal-content';
+  modContent.className = 'modal-content';
 
-    modContent.setAttribute('id', 'modContent');
+  modContent.setAttribute('id', 'modContent');
 
-    // spanner.className = 'close';
+  // spanner.className = 'close';
 
-    btnDiv.className = 'button-div';
+  btnDiv.className = 'button-div';
 
-    dateDiv.innerText = dateChanger(cow.date);
+  dateDiv.innerText = dateChanger(cow.date);
 
-    homeDiv.innerHTML = cow.home_team.abbreviation + ': ' + cow.home_team_score;
+  homeDiv.innerHTML = cow.home_team.abbreviation + ': ' + cow.home_team_score;
 
-    visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
+  visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
 
-    period.innerHTML = cow.time + ' ' + cow.period + 'Q - ' + cow.status + ' ';
+  period.innerHTML = cow.time + ' ' + cow.period + 'Q - ' + cow.status + ' ';
 
-    modContent.innerHTML =
-        `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}></div>`;
+  modContent.innerHTML =
+    `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}></div>`;
 
-    btnDiv.innerHTML = '<button id="myBtn">Get More Stats</button>';
+  btnDiv.innerHTML = '<button id="myBtn">Get More Stats</button>';
 
-    smallDiv.appendChild(dateDiv);
+  smallDiv.appendChild(dateDiv);
 
-    smallDiv.appendChild(homeDiv);
+  smallDiv.appendChild(homeDiv);
 
-    smallDiv.appendChild(visDiv);
+  smallDiv.appendChild(visDiv);
 
-    smallDiv.appendChild(period);
+  smallDiv.appendChild(period);
 
-    smallDiv.appendChild(btnDiv);
+  smallDiv.appendChild(btnDiv);
 
-    btnDiv.setAttribute('id', cow.id);
+  btnDiv.setAttribute('id', cow.id);
 
-    // modContent.appendChild(spanner);
+  // modContent.appendChild(spanner);
 
-    myModal.appendChild(modContent);
+  myModal.appendChild(modContent);
 
-    smallDiv.appendChild(myModal);
+  smallDiv.appendChild(myModal);
 
-    flex.appendChild(smallDiv);
+  flex.appendChild(smallDiv);
 
-    document.body.appendChild(flex);
+  document.body.appendChild(flex);
 
 }
