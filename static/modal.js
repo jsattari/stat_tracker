@@ -21,8 +21,8 @@ function makeTable(id) {
         <th>Min Played</th>
         <th>Points</th>
         <th>FG%</th>
-        <th>Rebounds</th>
-        <th>Assists</th>
+        <th>Rebs</th>
+        <th>Assts</th>
         <th>Blocks</th>
         <th>Steals</th></thead>`;
 

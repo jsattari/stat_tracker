@@ -5,8 +5,9 @@
         width: 100%;
     }
 
-    .modal {
+    .modal-content {
         overflow-x: scroll;
+        font-size: small;
     }
 }
 
@@ -17,8 +18,9 @@
         width: 50%;
     }
 
-    .modal {
+    .modal-content {
         overflow-x: scroll;
+        font-size: medium;
     }
 }
 
@@ -28,6 +30,11 @@
     .block {
         width: 25%;
     }
+
+    .modal-content {
+        overflow-x: scroll;
+        font-size: medium;
+    }
 }
 
 /* X-Large devices (Big ass screens) */
@@ -35,6 +42,11 @@
 @media only screen and (min-width: 1441px) {
     .block {
         width: 20%;
+    }
+
+    .modal-content {
+        overflow-x: scroll;
+        font-size: medium;
     }
 }
 
@@ -165,7 +177,6 @@ button:hover {
     height: 550px;
     width: 90%;
     font-size: 10px;
-    overflow: hidden;
 }
 
 /* The Close Button */
