@@ -13,9 +13,9 @@ function makeTable(id) {
 
     var tableDiv = document.getElementById('table' + id);
 
-    tableDiv.className = 'tableDiv'
-
     var tableGuy = document.createElement('table');
+
+    tableGuy.className = 'tableGuy'
 
     tableGuy.insertRow(0).innerHTML = 
         `<thead><th>Name</th>
