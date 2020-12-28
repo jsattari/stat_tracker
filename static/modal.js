@@ -13,12 +13,14 @@ function makeTable(id) {
 
     var tableDiv = document.getElementById('table' + id);
 
+    tableDiv.className = 'tableDiv'
+
     var tableGuy = document.createElement('table');
 
     tableGuy.insertRow(0).innerHTML = 
         `<thead><th>Name</th>
         <th>Team</th>
-        <th>Min Played</th>
+        <th>Mins</th>
         <th>Points</th>
         <th>FG%</th>
         <th>Rebs</th>
