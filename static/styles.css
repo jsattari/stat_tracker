@@ -48,8 +48,9 @@ body {
     flex-direction: row;
     background-color: transparent;
     width: 100%;
-    justify-content: left;
+    justify-content: start;
     font-family: Bangers;
+    gap: 5px;
 }
 
 .scoreboard {
@@ -59,7 +60,8 @@ body {
     font-family: Bangers;
     color: crimson;
     height: auto;
-    margin: 0px;
+    width: 100%;
+    letter-spacing: 5px;
 }
 
 .block {
