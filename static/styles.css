@@ -4,11 +4,9 @@
     .block {
         width: 100%;
     }
-
     .modal-content {
         font-size: small;
     }
-
     .close {
         margin-left: -.65em;
     }
@@ -23,7 +21,6 @@
     .modal-content {
         font-size: medium;
     }
-
     .close {
         margin-left: -.35em;
     }
@@ -234,10 +231,6 @@ td, th {
 
 tr {
     background: #ccc;
-}
-
-tbody tr:hover {
-    background-color: darkorange;
 }
 
 tbody tr th:first-child, tbody tr td:first-child {
