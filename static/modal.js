@@ -34,7 +34,7 @@ function makeTable(id) {
     for (let i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
         if (chunk.game.home_team_id == chunk.team.id) {
-            tableGuy.insertRow(i + 2).innerHTML =
+            tableGuy.insertRow(tableGuy.length + 1).innerHTML =
                 `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
                 <td>${chunk.team.abbreviation}</td>
                 <td>${chunk.min}</td>
