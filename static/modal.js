@@ -51,18 +51,18 @@ function makeTable(id) {
         `<tr><th>AWAY</th></tr>`;
 
     for (let i = 0; i < data2.data.length; i++) {
-        var chunk = data2.data[i];
-        if (chunk.game.away_team_id == chunk.team.id) {
+        var piece = data2.data[i];
+        if (piece.game.visitor_team_id == piece.team.id) {
             tableGuy.insertRow(tableGuy.rows.length).innerHTML =
-                `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
-                <td>${chunk.team.abbreviation}</td>
-                <td>${chunk.min}</td>
-                <td>${chunk.pts}</td>
-                <td>${chunk.fg_pct}</td>
-                <td>${chunk.reb}</td>
-                <td>${chunk.ast}</td>
-                <td>${chunk.blk}</td>
-                <td>${chunk.stl}</td>`;
+                `<td>${piece.player.first_name} ${piece.player.last_name}</td>
+                <td>${piece.team.abbreviation}</td>
+                <td>${piece.min}</td>
+                <td>${piece.pts}</td>
+                <td>${piece.fg_pct}</td>
+                <td>${piece.reb}</td>
+                <td>${piece.ast}</td>
+                <td>${piece.blk}</td>
+                <td>${piece.stl}</td>`;
         }
     }
 
