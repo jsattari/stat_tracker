@@ -236,6 +236,10 @@ tr {
     background: #ccc;
 }
 
+tbody tr:hover {
+    background-color: darkorange;
+}
+
 tbody tr th:first-child, tbody tr td:first-child {
     width: 12em;
     min-width: 8em;
