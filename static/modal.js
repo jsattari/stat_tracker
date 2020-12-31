@@ -17,7 +17,7 @@ function makeTable(id) {
 
     tableGuy.className = 'tableGuy'
 
-    tableGuy.insertRow(0).innerHTML = 
+    tableGuy.insertRow(0).innerHTML =
         `<thead><th>Name</th>
         <th>Team</th>
         <th>Mins</th>
@@ -28,23 +28,44 @@ function makeTable(id) {
         <th>Blocks</th>
         <th>Steals</th></thead>`;
 
-    tableGuy.insertRow(1).innerHTML = `<tr><th>HOME</th></tr>`;
+    tableGuy.insertRow(1).innerHTML =
+        `<tr><th>HOME</th></tr>`;
 
     for (let i = 0; i < data2.data.length; i++) {
         var chunk = data2.data[i];
-        tableGuy.insertRow(i + 2).innerHTML =
-            `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
-            <td>${chunk.team.abbreviation}</td>
-            <td>${chunk.min}</td>
-            <td>${chunk.pts}</td>
-            <td>${chunk.fg_pct}</td>
-            <td>${chunk.reb}</td>
-            <td>${chunk.ast}</td>
-            <td>${chunk.blk}</td>
-            <td>${chunk.stl}</td>`;
+        if (chunk.game.home_team_id == chunk.team.id) {
+            tableGuy.insertRow(i + 2).innerHTML =
+                `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
+                <td>${chunk.team.abbreviation}</td>
+                <td>${chunk.min}</td>
+                <td>${chunk.pts}</td>
+                <td>${chunk.fg_pct}</td>
+                <td>${chunk.reb}</td>
+                <td>${chunk.ast}</td>
+                <td>${chunk.blk}</td>
+                <td>${chunk.stl}</td>`;
+        }
     }
+
     tableGuy.insertRow(tableGuy.rows.length).innerHTML =
         `<tr><th>AWAY</th></tr>`;
+
+    for (let i = 0; i < data2.data.length; i++) {
+        var chunk = data2.data[i];
+        if (chunk.game.away_team_id == chunk.team.id) {
+            tableGuy.insertRow(i + 2).innerHTML =
+                `<td>${chunk.player.first_name} ${chunk.player.last_name}</td>
+                <td>${chunk.team.abbreviation}</td>
+                <td>${chunk.min}</td>
+                <td>${chunk.pts}</td>
+                <td>${chunk.fg_pct}</td>
+                <td>${chunk.reb}</td>
+                <td>${chunk.ast}</td>
+                <td>${chunk.blk}</td>
+                <td>${chunk.stl}</td>`;
+        }
+    }
+
     tableDiv.appendChild(tableGuy);
 }
 
