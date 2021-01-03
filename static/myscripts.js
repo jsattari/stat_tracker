@@ -18,6 +18,19 @@ function dateChanger(date) {
   return formattedDate
 }
 
+// gametime formatter
+function gametime(time, qtr, status) {
+  if (time == "" & qtr == 0) {
+    return `Game Start Time: ${status}`;
+  } else if (time == "" & qtr == 4) {
+    return `${status}`
+  } else if (time == "" & qtr > 4) {
+    return time + " | " + qtr - 4 + "OT | " + status
+  } else {
+    return `${time} | Q${qtr} | ${status}`
+  }
+}
+
 // dates for api pulls
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -26,8 +39,8 @@ var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.ge
 
 // variable to hold data
 var data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
-console.log(startDate)
-console.log(endDate)
+// console.log(startDate)
+// console.log(endDate)
 
 // create flexbox
 var flex = document.createElement('div');
@@ -86,7 +99,7 @@ for (let i = 0; i < data.data.length; i++) {
 
   visDiv.innerHTML = cow.visitor_team.abbreviation + ': ' + cow.visitor_team_score;
 
-  period.innerHTML = cow.time + ' ' + cow.period + 'Q - ' + cow.status + ' ';
+  period.innerHTML = gametime(cow.time, cow.period, cow.status);
 
   modContent.innerHTML =
     `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}></div>`;
