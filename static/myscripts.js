@@ -102,7 +102,7 @@ for (let i = 0; i < data.data.length; i++) {
   period.innerHTML = gametime(cow.time, cow.period, cow.status);
 
   modContent.innerHTML =
-    `<p id='statsheet'>STATS</p><span class="close">×</span><div id=table${cow.id}></div>`;
+    `<div id='statsheet'>STATS</div><span class="close">×</span><div id=table${cow.id}></div>`;
 
   btnDiv.innerHTML = '<button id="myBtn">Get More Stats</button>';
 
