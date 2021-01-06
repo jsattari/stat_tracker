@@ -25,7 +25,7 @@ function gametime(time, qtr, status) {
   } else if (time == "" & qtr == 4) {
     return `${status}`
   } else if (time == "" & qtr > 4) {
-    return time + " | " + qtr - 4 + "OT | " + status
+    return qtr - 4 + "OT | " + status
   } else {
     return `${time} | Q${qtr} | ${status}`
   }
