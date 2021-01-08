@@ -51,8 +51,7 @@ var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.ge
 
 // variable to hold data
 var data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
-var blob = data.data.sort(GetSortOrder("date"));
-console.log(blob.data[0])
+console.log(data)
 // console.log(startDate)
 // console.log(endDate)
 
@@ -62,8 +61,8 @@ var flex = document.createElement('div');
 // set class name of flexbox
 flex.className = 'flex-container';
 
-for (let i = 0; i < blob.data.length; i++) {
-  var cow = blob.data[i];
+for (let i = 0; i < data.data.length; i++) {
+  var cow = data.data[i];
 
   var smallDiv = document.createElement('div');
 
