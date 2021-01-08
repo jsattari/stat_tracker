@@ -31,6 +31,18 @@ function gametime(time, qtr, status) {
   }
 }
 
+//Comparer Function    
+function GetSortOrder(prop) {
+  return function (a, b) {
+    if (a[prop] > b[prop]) {
+      return 1;
+    } else if (a[prop] < b[prop]) {
+      return -1;
+    }
+    return 0;
+  }
+}
+
 // dates for api pulls
 var date = new Date();
 var endDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
@@ -39,6 +51,7 @@ var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.ge
 
 // variable to hold data
 var data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
+var data2 = data.data.sort(GetSortOrder("date"));
 // console.log(startDate)
 // console.log(endDate)
 
@@ -49,7 +62,7 @@ var flex = document.createElement('div');
 flex.className = 'flex-container';
 
 for (let i = 0; i < data.data.length; i++) {
-  var cow = data.data[i];
+  var cow = data2.data[i];
 
   var smallDiv = document.createElement('div');
 
