@@ -51,9 +51,9 @@ var startDate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.ge
 
 // variable to hold data
 var data = httpGet('https://www.balldontlie.io/api/v1/games?start_date=' + startDate + '&end_date=' + endDate);
+
+// order json array by date
 var data2 = data.data.sort(GetSortOrder("date"))
-// console.log(startDate)
-// console.log(endDate)
 
 // create flexbox
 var flex = document.createElement('div');
@@ -61,6 +61,7 @@ var flex = document.createElement('div');
 // set class name of flexbox
 flex.className = 'flex-container';
 
+// loop through json array and get each game
 for (let i = 0; i < data2.length; i++) {
   var cow = data2[i];
 
